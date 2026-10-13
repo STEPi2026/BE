@@ -2,12 +2,15 @@ from fastapi import FastAPI
 from sqlalchemy import text
 
 from app.db.database import engine
+from app.routers.auth import router as auth_router
 
 app = FastAPI(
     title="P5 AI Tutor Backend",
     description="P5 적응형 AI Tutor Agent Backend API",
     version="0.1.0"
 )
+
+app.include_router(auth_router)
 
 
 @app.get("/")
