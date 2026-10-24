@@ -1,4 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, status
+from pydantic import EmailStr
 from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
@@ -7,9 +8,10 @@ from app.core.security import create_access_token, hash_password, verify_passwor
 from app.db.database import get_db
 from app.db.models.user import User
 from app.schemas.auth import (
+    AccessTokenResponse,
     AuthenticationErrorResponse,
     AuthenticationStatusResponse,
-    AccessTokenResponse,
+    EmailAvailabilityResponse,
     LoginRequest,
     SignupRequest,
     SignupResponse,
@@ -36,6 +38,13 @@ router = APIRouter(
 def authentication_status() -> AuthenticationStatusResponse:
     """Expose a non-authenticating readiness endpoint until auth flows are added."""
     return AuthenticationStatusResponse(status="ready")
+
+
+@router.get("/check-email", response_model=EmailAvailabilityResponse, summary="Check email availability")
+def check_email(email: EmailStr, db: Session = Depends(get_db)) -> EmailAvailabilityResponse:
+    normalized_email = str(email).lower()
+    user = db.scalar(select(User).where(User.email == normalized_email))
+    return EmailAvailabilityResponse(email=normalized_email, available=user is None)
 
 
 @router.post(

@@ -11,6 +11,11 @@ class AccessTokenResponse(BaseModel):
     token_type: Literal["bearer"] = "bearer"
 
 
+class EmailAvailabilityResponse(BaseModel):
+    email: EmailStr
+    available: bool
+
+
 class LoginRequest(BaseModel):
     email: EmailStr
     password: str = Field(min_length=1, max_length=128)
