@@ -4,13 +4,15 @@ from sqlalchemy import select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
-from app.core.security import hash_password
+from app.core.security import create_access_token, hash_password, verify_password
 from app.db.database import get_db
 from app.db.models.user import User
 from app.schemas.auth import (
+    AccessTokenResponse,
     AuthenticationErrorResponse,
     AuthenticationStatusResponse,
     EmailAvailabilityResponse,
+    LoginRequest,
     SignupRequest,
     SignupResponse,
 )
@@ -43,6 +45,24 @@ def check_email(email: EmailStr, db: Session = Depends(get_db)) -> EmailAvailabi
     normalized_email = str(email).lower()
     user = db.scalar(select(User).where(User.email == normalized_email))
     return EmailAvailabilityResponse(email=normalized_email, available=user is None)
+
+
+@router.post(
+    "/login",
+    response_model=AccessTokenResponse,
+    responses={status.HTTP_401_UNAUTHORIZED: {"description": "Invalid credentials"}},
+    summary="Log in with email and password",
+)
+def login(login_request: LoginRequest, db: Session = Depends(get_db)) -> AccessTokenResponse:
+    user = db.scalar(select(User).where(User.email == str(login_request.email).lower()))
+    if user is None or not verify_password(login_request.password, user.password_hash):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid email or password",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+    return AccessTokenResponse(access_token=create_access_token(subject=user.id))
 
 
 @router.post(
