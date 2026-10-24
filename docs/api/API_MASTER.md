@@ -4,10 +4,10 @@
 
 - 기준 명세서: `STEPi_Backend_API_전체기능_명세서_v0.3_119개_통합본.docx`
 - 기준 브랜치: `origin/main`
-- 기준 커밋: `4673b112`
+- 기준 커밋: `344e4a9`
 - 점검일: 2026-10-24
 - 공식 API: 119개(클라이언트 110개, INTERNAL 9개)
-- 실제 OpenAPI: 7개(`GET /`, `GET /health`, `GET /health/db`, `GET /auth/status`, `POST /auth/signup`, `POST /auth/login`, `GET /auth/check-email`) — 기능 브랜치 감사 결과
+- 실제 OpenAPI: 8개(`GET /`, `GET /health`, `GET /health/db`, `GET /auth/status`, `POST /auth/signup`, `POST /auth/login`, `GET /auth/check-email`, `GET /users/me`) — 기능 브랜치 감사 결과
 - 의존성 분류는 공식 명세의 확정 분류가 아닌 초기 Backend 분석 결과입니다.
 - AUTH-01은 PR #5 merge commit `e7e1bc3`로 기준 main에 반영됐고, SQLite 격리 테스트 12개 및 OpenAPI 검증을 통과해 `VERIFIED`로 기록합니다.
 
@@ -16,9 +16,9 @@
 - BE_ONLY: 55
 - CONTRACT_REQUIRED: 27
 - AI_INTEGRATION: 37
-- VERIFIED: 3
+- VERIFIED: 4
 - IN_PROGRESS: 0
-- NOT_STARTED: 116
+- NOT_STARTED: 115
 
 ## 상태 갱신 규칙
 
@@ -34,7 +34,7 @@
 | AUTH-02 | POST | `/auth/login` | `/auth/login` | 로그인 | BE_ONLY | VERIFIED | PASSED | NOT_REQUIRED | #8 · PR #10 merged · bf8cd41 · 4673b112 |
 | AUTH-03 | POST | `/auth/refresh` | — | 토큰 재발급 | BE_ONLY | NOT_STARTED | NOT_RUN | NOT_REQUIRED | — |
 | AUTH-04 | POST | `/auth/logout` | — | 로그아웃 | BE_ONLY | NOT_STARTED | NOT_RUN | NOT_REQUIRED | — |
-| AUTH-05 | GET | `/users/me` | — | 내 정보 | BE_ONLY | NOT_STARTED | NOT_RUN | NOT_REQUIRED | — |
+| AUTH-05 | GET | `/users/me` | `/users/me` | 내 정보 | BE_ONLY | VERIFIED | PASSED | NOT_REQUIRED | #12 · feature/#12-current-user |
 | AUTH-06 | PATCH | `/users/me` | — | 내 정보 수정 | BE_ONLY | NOT_STARTED | NOT_RUN | NOT_REQUIRED | — |
 | AUTH-07 | GET | `/me/student-profile` | — | 학생 프로필 | BE_ONLY | NOT_STARTED | NOT_RUN | NOT_REQUIRED | — |
 | AUTH-08 | PATCH | `/me/student-profile` | — | 학생 프로필 수정 | BE_ONLY | NOT_STARTED | NOT_RUN | NOT_REQUIRED | — |
