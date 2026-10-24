@@ -7,7 +7,7 @@
 - 기준 커밋: `e7e1bc3`
 - 점검일: 2026-10-24
 - 공식 API: 119개(클라이언트 110개, INTERNAL 9개)
-- 실제 OpenAPI: 5개(`GET /`, `GET /health`, `GET /health/db`, `GET /auth/status`, `POST /auth/signup`) — 기준 `origin/main` 감사 결과
+- 실제 OpenAPI: 6개(기존 5개 및 `GET /auth/check-email`) — 기능 브랜치 감사 결과
 - 의존성 분류는 공식 명세의 확정 분류가 아닌 초기 Backend 분석 결과입니다.
 - AUTH-01은 PR #5 merge commit `e7e1bc3`로 기준 main에 반영됐고, SQLite 격리 테스트 12개 및 OpenAPI 검증을 통과해 `VERIFIED`로 기록합니다.
 
@@ -16,9 +16,9 @@
 - BE_ONLY: 55
 - CONTRACT_REQUIRED: 27
 - AI_INTEGRATION: 37
-- VERIFIED: 1
+- VERIFIED: 2
 - IN_PROGRESS: 0
-- NOT_STARTED: 118
+- NOT_STARTED: 117
 
 ## 상태 갱신 규칙
 
@@ -40,7 +40,7 @@
 | AUTH-08 | PATCH | `/me/student-profile` | — | 학생 프로필 수정 | BE_ONLY | NOT_STARTED | NOT_RUN | NOT_REQUIRED | — |
 | AUTH-09 | PATCH | `/auth/password` | — | 현재 비밀번호 변경 | BE_ONLY | NOT_STARTED | NOT_RUN | NOT_REQUIRED | — |
 | AUTH-10 | DELETE | `/users/me` | — | 회원 탈퇴 | BE_ONLY | NOT_STARTED | NOT_RUN | NOT_REQUIRED | — |
-| AUTH-11 | GET | `/auth/check-email` | — | 이메일 중복 확인 | BE_ONLY | NOT_STARTED | NOT_RUN | NOT_REQUIRED | — |
+| AUTH-11 | GET | `/auth/check-email` | `/auth/check-email` | 이메일 중복 확인 | BE_ONLY | VERIFIED | PASSED | NOT_REQUIRED | #9 · feature/#9-email-check |
 | AUTH-12 | POST | `/auth/password-reset/request` | — | 비밀번호 재설정 요청 | CONTRACT_REQUIRED | NOT_STARTED | NOT_RUN | CONTRACT_PENDING | — |
 | AUTH-13 | POST | `/auth/password-reset/confirm` | — | 비밀번호 재설정 완료 | CONTRACT_REQUIRED | NOT_STARTED | NOT_RUN | CONTRACT_PENDING | — |
 

@@ -11,6 +11,11 @@ class AccessTokenResponse(BaseModel):
     token_type: Literal["bearer"] = "bearer"
 
 
+class EmailAvailabilityResponse(BaseModel):
+    email: EmailStr
+    available: bool
+
+
 class AccessTokenPayload(BaseModel):
     """Claims expected in an access token after verification."""
 
