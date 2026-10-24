@@ -11,6 +11,11 @@ class AccessTokenResponse(BaseModel):
     token_type: Literal["bearer"] = "bearer"
 
 
+class LoginRequest(BaseModel):
+    email: EmailStr
+    password: str = Field(min_length=1, max_length=128)
+
+
 class AccessTokenPayload(BaseModel):
     """Claims expected in an access token after verification."""
 
