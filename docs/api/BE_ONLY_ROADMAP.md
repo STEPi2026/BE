@@ -5,7 +5,7 @@ API ID와 상세 상태의 단일 기준은 [API_MASTER.md](API_MASTER.md)입니
 ## 현재 완료 근거
 
 - 인증 기반: `bba2469`, PR #4 merge
-- 회원가입: `48deb43`, PR #5 Open — main 반영 전
+- 회원가입: `48deb43`, PR #5 merge commit `e7e1bc3` — `POST /auth/signup` 검증 완료
 
 ## 1 인증·계정
 
