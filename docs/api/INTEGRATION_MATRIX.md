@@ -1,0 +1,70 @@
+# API 연동 관리표
+
+실제 AI 서버 Endpoint와 Request/Response 계약은 공식 DOCX에 확정되어 있지 않아 모두 `CONTRACT_PENDING`입니다.
+
+| API ID | Backend 후보 Endpoint | 관련 파트 | 계약 상태 | 데이터 소유권 | Mock | 다음 협의 항목 |
+|---|---|---|---|---|---|---|
+| AUTH-12 | `/auth/password-reset/request` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| AUTH-13 | `/auth/password-reset/confirm` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| DIAG-01 | `/diagnostics` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| DIAG-02 | `/diagnostics/{id}` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| DIAG-03 | `/diagnostics/{id}/current-question` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| DIAG-04 | `/diagnostics/{id}/answers` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| DIAG-05 | `/diagnostics/{id}/results` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| DIAG-06 | `/me/diagnostics` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| ROAD-01 | `/me/roadmap` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| ROAD-02 | `/me/roadmap/generate` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| ROAD-03 | `/me/roadmap/replan` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| ROAD-04 | `/me/roadmap/steps/{id}` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| ROAD-05 | `/me/roadmap/progress` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| ROAD-06 | `/me/roadmap/history` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| LEARN-12 | `/me/wrong-answers` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| LEARN-13 | `/me/review-queue` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| OCR-01 | `/captured-problems` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| OCR-02 | `/captured-problems/{id}` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| OCR-03 | `/captured-problems/{id}/analyze` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| OCR-04 | `/ai-analyses/{id}` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| OCR-05 | `/ai-analyses/{id}/steps` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| OCR-06 | `/ai-analyses/{id}/errors` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| OCR-07 | `/ai-analyses/{id}/retry` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| OCR-08 | `/ai-analyses/{id}/ocr` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| OCR-09 | `/captured-problems` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| TUTOR-01 | `/tutor/feedback` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| TUTOR-02 | `/tutor/actions/{id}` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| TUTOR-03 | `/tutor/actions/{id}/responses` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| TUTOR-04 | `/me/tutor-history` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| TUTOR-05 | `/tutor/variant-problems` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| TUTOR-06 | `/tutor/variant-problems/{id}/attempts` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| CONTENT-04 | `/me/content-recommendations` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| GAME-03 | `/quests/daily` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| GAME-04 | `/me/quests` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| GAME-07 | `/me/achievements` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| FRIEND-01 | `/friends` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| FRIEND-02 | `/friend-requests` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| FRIEND-03 | `/friend-requests` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| FRIEND-04 | `/friend-requests/{id}` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| FRIEND-05 | `/friends/{id}` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| FRIEND-06 | `/friends/leaderboard` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| FRIEND-07 | `/me/competition-summary` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-01 | `/dashboard/summary` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-02 | `/students` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-03 | `/students/{id}` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-04 | `/students/{id}/knowledge-map` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-05 | `/students/{id}/weak-skills` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-06 | `/students/{id}/roadmap` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-07 | `/students/{id}/learning-history` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-08 | `/students/{id}/ai-analyses` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-09 | `/students/{id}/tutor-history` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-10 | `/students/{id}/gamification` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-11 | `/students/{id}/relative-standing` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-12 | `/students/{id}/reports` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| WEB-13 | `/students/{id}/reports/{reportId}` | APP·WEB·정책 | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| INTERNAL-01 | `/api/analysis` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| INTERNAL-02 | `/api/tutor/decision` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| INTERNAL-03 | `/api/diagnostic/next` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| INTERNAL-04 | `/api/diagnostic/evaluate` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| INTERNAL-05 | `/api/roadmap/generate` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| INTERNAL-06 | `/api/roadmap/replan` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| INTERNAL-07 | `/api/tutor/content` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| INTERNAL-08 | `/api/tutor/variant` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
+| INTERNAL-09 | `/api/content/recommend` | AI①·AI② | CONTRACT_PENDING | Backend는 사용자·학습 기록 DB 소유 | 가능 | Request/Response, 권한, 코드 매핑, 오류 정책 |
